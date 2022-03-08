@@ -6,11 +6,11 @@ const omdbKey = "8991f3e6";
 const tastedriveBaseURL = "http://tastedive.com/api/similar";
 const tastedriveKey = "307187-WebProgr-7T4FOZI5";
 
-export const searchMovieByTitle = (title) => {
+export const fetchMovieByTitle = (title) => {
   return fetch(`${omdbBaseURL}?apikey=${omdbKey}&t=${title}`);
 };
 
-export const searchSuggestionByTitle = (title, type = "movie") => {
+export const fetchSuggestionByTitle = (title, type = "movie") => {
   return fetch(
     `${corsProxy}${tastedriveBaseURL}?q=${title}&type=${type}&limit=5&k=${tastedriveKey}`
   );

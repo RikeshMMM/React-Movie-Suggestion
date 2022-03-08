@@ -1,9 +1,13 @@
 import { useState, useContext } from "react";
 import { SearchContext } from "../context/MovieContext";
 
-const Search = () => {
+const SearchBar = () => {
   const [input, setInput] = useState("");
-  const [search, setSearch] = useContext(SearchContext);
+  const [, setSearch] = useContext(SearchContext);
+
+  const clearUserInput = () => {
+    setInput("");
+  };
 
   const handleUserInput = (event) => {
     const value = event.target.value;
@@ -14,7 +18,7 @@ const Search = () => {
     event.preventDefault();
     const value = input.trim();
     setSearch(value);
-    console.log("Click")
+    clearUserInput();
   };
 
   return (
@@ -22,7 +26,7 @@ const Search = () => {
       <input
         type="text"
         id="search-term"
-        value={search ? search : input}
+        value={input}
         onChange={handleUserInput}
       />
       <button onClick={handleSearchButton}>Search</button>
@@ -30,4 +34,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchBar;
