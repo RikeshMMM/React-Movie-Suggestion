@@ -1,13 +1,170 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "IBM Plex Mono", monospace;
+  background: #161c2e;
+  color: #fff;
+  font-size: 18px;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+form input {
+  outline: 0;
+  background: none;
+  width: 100%;
+  border: 0;
+  padding: 1em
+}
+
+form button {
+  outline: 0;
+  background: #327af5;
+  border: 0;
+  padding: 1em;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+form button:hover {
+  background: #161c2e;
+}
+
+.suggestions button {
+  outline: none;
+  background: none;
+  border: 0;
+  color: #327af5;
+}
+
+.suggestions button:hover {
+  color: #2258b6;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
+}
+
+.input-group {
+  background-color: #212a46;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.container {
+  color: #fff;
+  background: #212a46;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 2rem;
+}
+
+.details {
+  display: grid;
+  grid-template-areas:
+    "poster"
+    "header"
+    "plot"
+    "stats"
+    "additional";
+  grid-gap: 1em;
+}
+
+.details__poster {
+  grid-area: poster;
+}
+
+.details__header {
+  grid-area: header;
+  display: grid;
+  grid-gap: 1em;
+}
+
+.details__plot {
+  grid-area: plot;
+}
+
+.details__stats {
+  grid-area: stats;
+  background: #161c2e;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.details__stats__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details__additional {
+  grid-area: additional;
+  display: grid;
+  grid-gap: 1em;
+}
+
+.details__additional__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1em;
+  align-items: center;
+}
+
+.text--color-light-blue {
+  color: #327af5;
+}
+
+.text--weight-bold {
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 820px) {
+  .details {
+    grid-template-areas:
+      "poster header"
+      "poster plot"
+      "poster stats"
+      "poster additional";
+  }
+
+  .details__header {
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+  }
+
+  .details__additional {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -12,10 +12,20 @@ const Suggestions = ({ suggestions }) => {
   };
 
   return (
-    <div className="suggestions">
-      {suggestions.map((suggestion, index) => (
-        <Suggestion key={index} {...suggestion} handleButtonClick={handleSearchBySuggestion}/>
-      ))}
+    <div className="container">
+      <div className="suggestions">
+        <span>Suggestions: </span>
+        {suggestions.map((suggestion, index) => (
+          <>
+          <Suggestion
+            key={index}
+            {...suggestion}
+            handleButtonClick={handleSearchBySuggestion}
+          />
+          <span>{index < suggestions.length-1 ? ", " : "."}</span>
+          </>
+        ))}
+      </div>
     </div>
   );
 };

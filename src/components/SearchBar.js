@@ -22,14 +22,27 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search">
-      <input
-        type="text"
-        id="search-term"
-        value={input}
-        onChange={handleUserInput}
-      />
-      <button onClick={handleSearchButton}>Search</button>
+    <div className="container">
+      <div className="search-bar">
+        <form autoComplete="off">
+          <div className="input-group">
+            <img src="search.svg" alt="Search Icon" width={25} height={25} />
+            <input
+              type="text"
+              id="search-term"
+              placeholder="Search Movie"
+              value={input}
+              onChange={handleUserInput}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  handleSearchButton(event);
+                }
+              }}
+            />
+            <button onClick={handleSearchButton}>Search</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
