@@ -1,10 +1,14 @@
 import MovieDetailsAndSuggestions from "./components/MovieDetailsAndSuggestions";
+import Footer from "./components/Footer";
 import { MovieProvider } from "./context/MovieContext";
 
 const App = () => {
   return (
     <MovieProvider>
-      <MovieDetailsAndSuggestions />
+      <div className="container">
+        <MovieDetailsAndSuggestions />
+        <Footer />
+      </div>
     </MovieProvider>
   );
 };

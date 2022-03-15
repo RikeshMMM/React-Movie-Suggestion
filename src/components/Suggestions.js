@@ -12,18 +12,15 @@ const Suggestions = ({ suggestions }) => {
   };
 
   return (
-    <div className="container">
+    <div className="section">
       <div className="suggestions">
-        <span>Suggestions: </span>
+        <h2>Suggestions:</h2>
         {suggestions.map((suggestion, index) => (
-          <>
           <Suggestion
-            key={index}
             {...suggestion}
             handleButtonClick={handleSearchBySuggestion}
+            key={index}
           />
-          <span>{index < suggestions.length-1 ? ", " : "."}</span>
-          </>
         ))}
       </div>
     </div>

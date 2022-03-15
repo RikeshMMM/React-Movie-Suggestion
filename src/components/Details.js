@@ -14,7 +14,7 @@ const Details = ({
   Language,
 }) => {
   return (
-    <div className="container">
+    <div className="section">
       <div className="details">
         <div className="details__poster">
           <img src={Poster} alt={Title} />

@@ -8,6 +8,7 @@ const MovieDetailsAndSuggestions = () => {
   const [search] = useContext(SearchContext);
   return (
     <>
+      <h1>Movie Details And Suggestions</h1>
       <SearchBar />
       {search && <SearchDetails />}
       {search && <SearchSuggestions />}

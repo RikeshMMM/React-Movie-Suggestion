@@ -13,6 +13,7 @@ body {
   font-size: 18px;
 }
 
+a,
 input,
 select,
 textarea,
@@ -22,8 +23,13 @@ button {
   color: inherit;
 }
 
+button {
+  outline: none;
+  border: 0;
+}
+
 form input {
-  outline: 0;
+  outline: none;
   background: none;
   width: 100%;
   border: 0;
@@ -31,11 +37,9 @@ form input {
 }
 
 form button {
-  outline: 0;
   background: #327af5;
-  border: 0;
-  padding: 1em;
   color: #ffffff;
+  padding: 1em;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -45,9 +49,7 @@ form button:hover {
 }
 
 .suggestions button {
-  outline: none;
   background: none;
-  border: 0;
   color: #327af5;
 }
 
@@ -81,11 +83,16 @@ form button:hover {
 }
 
 .container {
+  padding: 1em;
+  margin: 2em;
+}
+
+.section {
   color: #fff;
   background: #212a46;
   border-radius: 10px;
   padding: 1em;
-  margin: 2rem;
+  margin: 1em 0;
 }
 
 .details {
@@ -142,12 +149,21 @@ form button:hover {
   align-items: center;
 }
 
+.suggestions {
+  display: grid;
+  grid-gap: 1em;
+}
+
 .text--color-light-blue {
   color: #327af5;
 }
 
 .text--weight-bold {
   font-weight: 700;
+}
+
+.text--align-center {
+  text-align: center;
 }
 
 @media only screen and (min-width: 820px) {

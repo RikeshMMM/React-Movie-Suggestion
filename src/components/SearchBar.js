@@ -22,7 +22,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="container">
+    <div className="section">
       <div className="search-bar">
         <form autoComplete="off">
           <div className="input-group">

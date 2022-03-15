@@ -64,7 +64,7 @@ const SearchDetails = () => {
         });
     };
 
-    if (search && subscribed) fetchData();
+    if (subscribed) fetchData();
 
     return () => (subscribed = false);
   }, [search]);
