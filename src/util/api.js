@@ -7,7 +7,7 @@ const tastedriveBaseURL = "http://tastedive.com/api/similar";
 const tastedriveKey = "307187-WebProgr-7T4FOZI5";
 
 export const fetchMovieByTitle = (title) => {
-  return fetch(`${omdbBaseURL}?apikey=${omdbKey}&t=${title}`);
+  return fetch(`${corsProxy}${omdbBaseURL}?apikey=${omdbKey}&t=${title}`);
 };
 
 export const fetchSuggestionByTitle = (title, type = "movie") => {
